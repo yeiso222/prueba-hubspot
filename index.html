@@ -1,0 +1,120 @@
+<style>
+        :root {
+            --primary: #ff7a59;
+            /* El color naranja clásico de HubSpot */
+            --dark: #2d3e50;
+            --light: #f5f8fa;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light);
+            color: var(--dark);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            max-width: 450px;
+            width: 90%;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            font-size: 24px;
+            color: var(--dark);
+        }
+
+        p {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        /* Estilos del Formulario */
+        .form-group {
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd6e2;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 5px rgba(255, 122, 89, 0.3);
+        }
+
+        button {
+            width: 100%;
+            background-color: var(--primary);
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #e56a4c;
+            transform: translateY(-1px);
+        }
+
+        .footer-note {
+            font-size: 12px;
+            color: #999;
+            margin-top: 20px;
+        }
+    </style>
+
+    <div class="card">
+        <h1>Prueba de Integración</h1>
+        <p>Completa tus datos para probar la conexión con el CRM.</p>
+
+        <form name="contacto-hubspot" method="POST" data-netlify="true">
+            <div class="form-group">
+                <label for="firstname">Nombre</label>
+                <input type="text" name="firstname" id="firstname" placeholder="Tu nombre" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Correo Electrónico</label>
+                <input type="email" name="email" id="email" placeholder="nombre@empresa.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="company">Empresa</label>
+                <input type="text" name="company" id="company" placeholder="Nombre de tu empresa">
+            </div>
+
+            <button type="submit">Enviar a HubSpot</button>
+        </form>
+
+        <p class="footer-note">Los datos enviados se procesarán para la prueba de integración.</p>
+    </div>
